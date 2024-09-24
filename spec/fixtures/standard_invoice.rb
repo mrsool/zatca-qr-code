@@ -97,6 +97,7 @@ def construct_signed_standard_invoice
     tax_exclusive_amount: "900.00",
     tax_inclusive_amount: "1035.00",
     allowance_total_amount: "0.00",
+    charge_total_amount: "0.00",
     payable_amount: "1035.00"
   )
 
@@ -265,6 +266,7 @@ def construct_unsigned_standard_invoice
     tax_exclusive_amount: "4.00",
     tax_inclusive_amount: "4.60",
     allowance_total_amount: "0.00",
+    charge_total_amount: "0.00",
     prepaid_amount: "0.00",
     payable_amount: "4.60"
   )

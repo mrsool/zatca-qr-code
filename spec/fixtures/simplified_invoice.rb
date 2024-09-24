@@ -104,6 +104,7 @@ LEGAL_MONETARY_TOTAL = ZATCA::UBL::CommonAggregateComponents::LegalMonetaryTotal
   tax_exclusive_amount: "201.00",
   tax_inclusive_amount: "231.15",
   allowance_total_amount: "0.00",
+  charge_total_amount: "0.00",
   prepaid_amount: "0.00",
   payable_amount: "231.15"
 ).freeze

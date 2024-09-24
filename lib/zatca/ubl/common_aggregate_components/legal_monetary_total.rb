@@ -1,6 +1,6 @@
 class ZATCA::UBL::CommonAggregateComponents::LegalMonetaryTotal < ZATCA::UBL::BaseComponent
   attr_reader :line_extension_amount, :tax_exclusive_amount,
-    :tax_inclusive_amount, :allowance_total_amount, :prepaid_amount,
+    :tax_inclusive_amount, :allowance_total_amount, :charge_total_amount, :prepaid_amount,
     :payable_amount, :currency_id
 
   # <cac:LegalMonetaryTotal>
@@ -17,6 +17,7 @@ class ZATCA::UBL::CommonAggregateComponents::LegalMonetaryTotal < ZATCA::UBL::Ba
     tax_exclusive_amount:,
     tax_inclusive_amount:,
     allowance_total_amount:,
+    charge_total_amount:,
     prepaid_amount: nil,
     payable_amount: nil,
     currency_id: "SAR"
@@ -25,6 +26,7 @@ class ZATCA::UBL::CommonAggregateComponents::LegalMonetaryTotal < ZATCA::UBL::Ba
     @tax_exclusive_amount = tax_exclusive_amount
     @tax_inclusive_amount = tax_inclusive_amount
     @allowance_total_amount = allowance_total_amount
+    @charge_total_amount = charge_total_amount
     @prepaid_amount = prepaid_amount
     @payable_amount = payable_amount
     @currency_id = currency_id
@@ -52,6 +54,7 @@ class ZATCA::UBL::CommonAggregateComponents::LegalMonetaryTotal < ZATCA::UBL::Ba
       ZATCA::UBL::BaseComponent.new(name: "cbc:TaxExclusiveAmount", value: @tax_exclusive_amount, attributes: {"currencyID" => @currency_id}),
       ZATCA::UBL::BaseComponent.new(name: "cbc:TaxInclusiveAmount", value: @tax_inclusive_amount, attributes: {"currencyID" => @currency_id}),
       ZATCA::UBL::BaseComponent.new(name: "cbc:AllowanceTotalAmount", value: @allowance_total_amount, attributes: {"currencyID" => @currency_id}),
+      ZATCA::UBL::BaseComponent.new(name: "cbc:ChargeTotalAmount", value: @charge_total_amount, attributes: {"currencyID" => @currency_id}),
       prepaid_amount_element,
       payable_amount_element
     ]
